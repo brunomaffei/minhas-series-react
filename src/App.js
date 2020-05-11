@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState, useEffect} from 'react'
+import Header from './Components/Header'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import Home from './Components/Home'
+import Generos from './Components/Generos'
+import axios from 'axios'
 
-function App() {
+function App () {
+  const [data, setData] = useState({})
+  useEffect(() => {
+    axios.get('/api').then(res => {
+      setData(res.data)
+    })
+  }, [])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+    <div>
+      <Header/>
+          <Route exact path='/' component={Home} />
+          <Route path='/generos' component={Generos} />
+        <pre>{JSON.stringify(data)}</pre>
+          </div>
+    </Router>
+  )
 }
 
-export default App;
+export default App
