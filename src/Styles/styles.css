@@ -1,0 +1,38 @@
+*{
+  font-family: Arial, Helvetica, sans-serif;
+  color: crimson;
+  background-color: transparent
+}
+
+.h1Under{
+  text-decoration: underline;
+}
+
+.Nav{
+  background-color: black;
+}
+.Brand{
+  font-weight: bold;
+  color: white;
+}
+
+.Link{
+  font-weight: bold;
+  color:snow;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: white;
+}
+
+.gf { 
+  border-collapse:separate; 
+  border-spacing:0 25px; 
+}
+
+.formBtn{
+  margin:0px;
+  margin-bottom: 10px;
+  border-spacing: 10px;
+  margin-top: auto;
+}

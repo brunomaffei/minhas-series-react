@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import {
   Navbar,
   NavbarBrand,
@@ -8,6 +8,7 @@ import {
   NavbarToggler,
   NavLink
 } from 'reactstrap'
+import '../Styles/styles.css'
 
 import { Link } from 'react-router-dom'
 
@@ -17,17 +18,22 @@ const Header = () => {
     setOpen(!open)
   }
   return (
-    <Navbar color='light' light expand='md'>
-    <NavbarBrand tag={Link} to='/'> Minhas Séries</NavbarBrand>
-      <NavbarToggler onClick={toggle} />
-      <Collapse isOpen={true} navbar>
-        <Nav className='ml-auto' navbar>
-          <NavItem>
-            <NavLink tag={Link} to='/generos'>Generos</NavLink>
-          </NavItem>
-        </Nav>
-      </Collapse>
-    </Navbar>
+    <div className="">
+      <Navbar className="Nav" color='black' light expand='md'>
+        <NavbarBrand style={{ color: "red" }} tag={Link} to='/'> Minhas Séries</NavbarBrand>
+        <NavbarToggler onClick={toggle} />
+        <Collapse isOpen={true} navbar>
+          <Nav className='ml-auto' navbar>
+            <NavItem>
+              <NavLink style={{ color: "red" }} tag={Link} to='/series'>Séries</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink style={{ color: "red" }} tag={Link} to='/generos'>Generos</NavLink>
+            </NavItem>
+          </Nav>
+        </Collapse>
+      </Navbar>
+    </div>
   )
 }
 
