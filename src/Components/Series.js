@@ -31,7 +31,7 @@ export default function Series () {
         <td>{record.name}</td>
         <td>
           <button style={{marginRight:"20px"}} className="btn btn-danger" onClick={() => deleteSerie(record.id)}>Remover</button>
-          <Link to={'/series/' + record.id}  className="btn btn-danger" >Editar</Link>
+          <Link to={'/series/' + record.id}  className="btn btn-danger" >Info</Link>
           </td>
       </tr>
     )
@@ -54,7 +54,7 @@ export default function Series () {
       <h1 style={{textAlign: "center"}} className="h1Under">Séries</h1>
       <br></br>
       <div className="formBtn">
-      <Link style={{marginBottom:"30px"}} className="btn btn-primary" to='/generos/novo'>Novo Série</Link>
+      <Link style={{marginBottom:"30px"}} className="btn btn-primary" to='/series/novo'>Novo Série</Link>
       <table className='table table-dark'>
         <thead>
           <tr>
